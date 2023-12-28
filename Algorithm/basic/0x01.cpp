@@ -17,6 +17,16 @@ int func2(int arr[], int N){
     return 0;
 }
 
+/* func2 다른 풀이 시간복잡도 O(N) */
+int arr_func2(int arr[], int N){
+    int occur[101]={};
+    for(int i = 0; i < N; i++){
+        if(occur[100-arr[i]] /* == 1 이거 안붙여도 됨*/) return 1;
+        occur[arr[i]] = 1;
+    }
+    return 0;
+}
+
 int func3(int N){
     for(int i = 1; i < N; i++){
         if(i * i == N) return 1;
